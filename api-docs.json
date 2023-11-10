@@ -10,7 +10,7 @@
     "application/octet-stream",
     "text/plain"
   ],
-  "host": "example.org",
+  "host": "http://localhost:3000",
   "basePath": "/api/v1/",
   "tags": [
     {
