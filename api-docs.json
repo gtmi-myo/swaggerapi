@@ -1,0 +1,1914 @@
+{
+  "info": {
+    "title": "API title",
+    "version": "0.0.1"
+  },
+  "swagger": "2.0",
+  "produces": [
+    "application/xml",
+    "application/json",
+    "application/octet-stream",
+    "text/plain"
+  ],
+  "host": "example.org",
+  "basePath": "/api/v1/",
+  "tags": [
+    {
+      "name": "inquiries",
+      "description": "Operations about inquiries"
+    },
+    {
+      "name": "customers",
+      "description": "Operations about customers"
+    },
+    {
+      "name": "register_menus",
+      "description": "Operations about register_menus"
+    },
+    {
+      "name": "companies",
+      "description": "Operations about companies"
+    },
+    {
+      "name": "customer_echarts",
+      "description": "Operations about customer_echarts"
+    },
+    {
+      "name": "scan_results",
+      "description": "Operations about scan_results"
+    },
+    {
+      "name": "attachments",
+      "description": "Operations about attachments"
+    },
+    {
+      "name": "salon_proposals",
+      "description": "Operations about salon_proposals"
+    },
+    {
+      "name": "face_proposal_types",
+      "description": "Operations about face_proposal_types"
+    },
+    {
+      "name": "images",
+      "description": "Operations about images"
+    },
+    {
+      "name": "login",
+      "description": "Operations about logins"
+    },
+    {
+      "name": "reset_password",
+      "description": "Operations about reset_passwords"
+    },
+    {
+      "name": "update_password",
+      "description": "Operations about update_passwords"
+    },
+    {
+      "name": "logout",
+      "description": "Operations about logouts"
+    }
+  ],
+  "paths": {
+    "/v1/inquiries/{id}/answer": {
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "basic_info[email]",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[address_building]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[address_prefecture]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[address_street]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[address_city]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[birth_date]",
+            "type": "string",
+            "format": "date",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[first_name]",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[first_name_kana]",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[gender]",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[last_name]",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[last_name_kana]",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[occupation]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[password]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[zip_code]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[assurance_file]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[medical_questionnaire]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[medical_multi_choice]",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[phone_number]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "inquiry_answers[id]",
+            "type": "array",
+            "required": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "in": "formData",
+            "name": "inquiry_answers[answer]",
+            "type": "array",
+            "required": false,
+            "items": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "formData",
+            "name": "inquiry_answers[options]",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "customer_echart_id",
+            "type": "integer",
+            "format": "int32",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "salon_proposal_id",
+            "type": "integer",
+            "format": "int32",
+            "required": false
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "created Answer"
+          }
+        },
+        "tags": [
+          "inquiries"
+        ],
+        "operationId": "postV1InquiriesIdAnswer"
+      }
+    },
+    "/v1/inquiries/{id}": {
+      "delete": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "deleted Inquiry"
+          }
+        },
+        "tags": [
+          "inquiries"
+        ],
+        "operationId": "deleteV1InquiriesId"
+      },
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "get Inquiry(s)"
+          }
+        },
+        "tags": [
+          "inquiries"
+        ],
+        "operationId": "getV1InquiriesId"
+      }
+    },
+    "/v1/inquiries/{id}/desactivate": {
+      "patch": {
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "patched Desactivate"
+          }
+        },
+        "tags": [
+          "inquiries"
+        ],
+        "operationId": "patchV1InquiriesIdDesactivate"
+      }
+    },
+    "/v1/inquiries/{id}/activate": {
+      "patch": {
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "patched Activate"
+          }
+        },
+        "tags": [
+          "inquiries"
+        ],
+        "operationId": "patchV1InquiriesIdActivate"
+      }
+    },
+    "/v1/inquiries": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "format": "int32",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "per",
+            "type": "integer",
+            "format": "int32",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "get Inquiry(s)"
+          }
+        },
+        "tags": [
+          "inquiries"
+        ],
+        "operationId": "getV1Inquiries"
+      }
+    },
+    "/v1/inquiries/current_active_for_male": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "company_id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "customer_echart_id",
+            "type": "integer",
+            "format": "int32",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "get CurrentActiveForMale(s)"
+          }
+        },
+        "tags": [
+          "inquiries"
+        ],
+        "operationId": "getV1InquiriesCurrentActiveForMale"
+      }
+    },
+    "/v1/inquiries/current_active": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "company_id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "customer_echart_id",
+            "type": "integer",
+            "format": "int32",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "gender",
+            "type": "integer",
+            "format": "int32",
+            "default": 0,
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "get CurrentActive(s)"
+          }
+        },
+        "tags": [
+          "inquiries"
+        ],
+        "operationId": "getV1InquiriesCurrentActive"
+      }
+    },
+    "/v1/inquiries/upload": {
+      "post": {
+        "description": "POST api/v1/inquiries/upload",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "survey_file",
+            "type": "file",
+            "required": true
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "POST api/v1/inquiries/upload"
+          }
+        },
+        "tags": [
+          "inquiries"
+        ],
+        "operationId": "postV1InquiriesUpload"
+      }
+    },
+    "/v1/customers/{id}": {
+      "delete": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "deleted Customer"
+          }
+        },
+        "tags": [
+          "customers"
+        ],
+        "operationId": "deleteV1CustomersId"
+      },
+      "patch": {
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "basic_info[email]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[address_building]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[address_prefecture]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[address_street]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[address_city]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[birth_date]",
+            "type": "string",
+            "format": "date",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[first_name]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[first_name_kana]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[gender]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[last_name]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[last_name_kana]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[occupation]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[password]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[zip_code]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[assurance_file]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[medical_questionnaire]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[medical_multi_choice]",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "basic_info[phone_number]",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "salon_proposal_id",
+            "type": "integer",
+            "format": "int32",
+            "required": false
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "patched Customer"
+          }
+        },
+        "tags": [
+          "customers"
+        ],
+        "operationId": "patchV1CustomersId"
+      },
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "get Customer(s)"
+          }
+        },
+        "tags": [
+          "customers"
+        ],
+        "operationId": "getV1CustomersId"
+      }
+    },
+    "/v1/customers": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "format": "int32",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "per",
+            "type": "integer",
+            "format": "int32",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "name_cont",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "birth_date",
+            "type": "string",
+            "format": "date",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "phone_number",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "sort_by",
+            "description": "Key for order by direction or many columns",
+            "type": "string",
+            "enum": [
+              "id",
+              "first_name",
+              "last_name",
+              "birth_date",
+              "updated_at",
+              "created_at"
+            ],
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "sort_dir",
+            "description": "Increase or descrease order",
+            "type": "string",
+            "default": "asc",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "get Customer(s)"
+          }
+        },
+        "tags": [
+          "customers"
+        ],
+        "operationId": "getV1Customers"
+      }
+    },
+    "/v1/register_menus/upload": {
+      "post": {
+        "description": "POST api/v1/register_menus/upload",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "xls_file",
+            "type": "file",
+            "required": true
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "POST api/v1/register_menus/upload"
+          }
+        },
+        "tags": [
+          "register_menus"
+        ],
+        "operationId": "postV1RegisterMenusUpload"
+      }
+    },
+    "/v1/register_menus/{id}": {
+      "delete": {
+        "description": "delete api/v1/register_menus/:id/",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "delete api/v1/register_menus/:id/"
+          }
+        },
+        "tags": [
+          "register_menus"
+        ],
+        "operationId": "deleteV1RegisterMenusId"
+      },
+      "get": {
+        "description": "GET api/v1/register_menus/:id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "GET api/v1/register_menus/:id"
+          }
+        },
+        "tags": [
+          "register_menus"
+        ],
+        "operationId": "getV1RegisterMenusId"
+      }
+    },
+    "/v1/register_menus/{id}/desactivate": {
+      "patch": {
+        "description": "patch api/v1/register_menus/:id/desactivate",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "patch api/v1/register_menus/:id/desactivate"
+          }
+        },
+        "tags": [
+          "register_menus"
+        ],
+        "operationId": "patchV1RegisterMenusIdDesactivate"
+      }
+    },
+    "/v1/register_menus/{id}/activate": {
+      "patch": {
+        "description": "patch api/v1/register_menus/:id/activate",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "patch api/v1/register_menus/:id/activate"
+          }
+        },
+        "tags": [
+          "register_menus"
+        ],
+        "operationId": "patchV1RegisterMenusIdActivate"
+      }
+    },
+    "/v1/register_menus/{id}/category_names": {
+      "get": {
+        "description": "GET api/v1/register_menus/:id/category_names",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "format": "int32",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "per",
+            "type": "integer",
+            "format": "int32",
+            "required": false
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "GET api/v1/register_menus/:id/category_names"
+          }
+        },
+        "tags": [
+          "register_menus"
+        ],
+        "operationId": "getV1RegisterMenusIdCategoryNames"
+      }
+    },
+    "/v1/register_menus/current_active": {
+      "get": {
+        "description": "Get api/v1/register_menus/current_active",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Get api/v1/register_menus/current_active"
+          }
+        },
+        "tags": [
+          "register_menus"
+        ],
+        "operationId": "getV1RegisterMenusCurrentActive"
+      }
+    },
+    "/v1/register_menus": {
+      "get": {
+        "description": "GET api/v1/register_menus/",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "format": "int32",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "per",
+            "type": "integer",
+            "format": "int32",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "GET api/v1/register_menus/"
+          }
+        },
+        "tags": [
+          "register_menus"
+        ],
+        "operationId": "getV1RegisterMenus"
+      }
+    },
+    "/v1/companies": {
+      "post": {
+        "description": "post api/v1/companies/current",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "address",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "company_type",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "contact_name",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "email",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "inquiry_phone_number",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "name",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "phone_number",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "representative_name",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "store_name",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "logo",
+            "type": "file",
+            "required": false
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "post api/v1/companies/current"
+          }
+        },
+        "tags": [
+          "companies"
+        ],
+        "operationId": "postV1Companies"
+      }
+    },
+    "/v1/companies/current_plans": {
+      "get": {
+        "description": "Get api/v1/companies/current_plans",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Get api/v1/companies/current_plans"
+          }
+        },
+        "tags": [
+          "companies"
+        ],
+        "operationId": "getV1CompaniesCurrentPlans"
+      }
+    },
+    "/v1/companies/current": {
+      "get": {
+        "description": "Get api/v1/companies/current",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Get api/v1/companies/current"
+          }
+        },
+        "tags": [
+          "companies"
+        ],
+        "operationId": "getV1CompaniesCurrent"
+      }
+    },
+    "/v1/customer_echarts/{id}/clinic_proposal_images": {
+      "get": {
+        "description": "get api/v1/customer_echarts/:id/clinic_proposal_images",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "get api/v1/customer_echarts/:id/clinic_proposal_images"
+          }
+        },
+        "tags": [
+          "customer_echarts"
+        ],
+        "operationId": "getV1CustomerEchartsIdClinicProposalImages"
+      },
+      "post": {
+        "description": "Post api/v1/customer_echarts/:id/clinic_proposal_images",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "lowerHalfFaceClinicImg",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "eyeClinicImg",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "noseClinicImg",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "mouthClinicImg",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "skinClinicImg",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Post api/v1/customer_echarts/:id/clinic_proposal_images"
+          }
+        },
+        "tags": [
+          "customer_echarts"
+        ],
+        "operationId": "postV1CustomerEchartsIdClinicProposalImages"
+      }
+    },
+    "/v1/customer_echarts/{id}/salon_proposals": {
+      "get": {
+        "description": "get api/v1/customer_echarts/:id/salon_proposals",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "get api/v1/customer_echarts/:id/salon_proposals"
+          }
+        },
+        "tags": [
+          "customer_echarts"
+        ],
+        "operationId": "getV1CustomerEchartsIdSalonProposals"
+      }
+    },
+    "/v1/customer_echarts": {
+      "post": {
+        "description": "Post api/v1/customer_echarts/?customer_id",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "customer_id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Post api/v1/customer_echarts/?customer_id"
+          }
+        },
+        "tags": [
+          "customer_echarts"
+        ],
+        "operationId": "postV1CustomerEcharts"
+      },
+      "get": {
+        "description": "Get api/v1/customer_echarts/?customer_id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "customer_id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get api/v1/customer_echarts/?customer_id"
+          }
+        },
+        "tags": [
+          "customer_echarts"
+        ],
+        "operationId": "getV1CustomerEcharts"
+      }
+    },
+    "/v1/customer_echarts/{id}/images": {
+      "post": {
+        "description": "Post api/v1/customer_echarts/:id/images?customer_id",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "customer_id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "is_after",
+            "type": "boolean",
+            "default": false,
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "front_image",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "side_image",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "other_images",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "front_image_file",
+            "type": "file",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "side_image_file",
+            "type": "file",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "other_images_file",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "required": false
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Post api/v1/customer_echarts/:id/images?customer_id"
+          }
+        },
+        "tags": [
+          "customer_echarts"
+        ],
+        "operationId": "postV1CustomerEchartsIdImages"
+      }
+    },
+    "/v1/customer_echarts/{id}": {
+      "patch": {
+        "description": "patch api/v1/customer_echarts/:id",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "note",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "patch api/v1/customer_echarts/:id"
+          }
+        },
+        "tags": [
+          "customer_echarts"
+        ],
+        "operationId": "patchV1CustomerEchartsId"
+      },
+      "get": {
+        "description": "Get api/v1/customer_echarts/:id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get api/v1/customer_echarts/:id"
+          }
+        },
+        "tags": [
+          "customer_echarts"
+        ],
+        "operationId": "getV1CustomerEchartsId"
+      }
+    },
+    "/v1/customer_echarts/{id}/proposal_menu": {
+      "get": {
+        "description": "Get api/v1/customer_echarts/:id/proposal_menu",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get api/v1/customer_echarts/:id/proposal_menu"
+          }
+        },
+        "tags": [
+          "customer_echarts"
+        ],
+        "operationId": "getV1CustomerEchartsIdProposalMenu"
+      }
+    },
+    "/v1/customer_echarts/{id}/check_new_survey": {
+      "get": {
+        "description": "Get api/v1/customer_echarts/:id/check_new_survey",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get api/v1/customer_echarts/:id/check_new_survey"
+          }
+        },
+        "tags": [
+          "customer_echarts"
+        ],
+        "operationId": "getV1CustomerEchartsIdCheckNewSurvey"
+      }
+    },
+    "/v1/scan_results/{id}": {
+      "put": {
+        "description": "put api/v1/scan_results/:id",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "put api/v1/scan_results/:id"
+          }
+        },
+        "tags": [
+          "scan_results"
+        ],
+        "operationId": "putV1ScanResultsId"
+      },
+      "get": {
+        "description": "get api/v1/scan_results/:id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "get api/v1/scan_results/:id"
+          }
+        },
+        "tags": [
+          "scan_results"
+        ],
+        "operationId": "getV1ScanResultsId"
+      }
+    },
+    "/v1/scan_results/ai": {
+      "post": {
+        "description": "post api/v1/scan_results/ai",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "base64_data",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "acne_threshold",
+            "type": "number",
+            "format": "float",
+            "required": false
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "post api/v1/scan_results/ai"
+          }
+        },
+        "tags": [
+          "scan_results"
+        ],
+        "operationId": "postV1ScanResultsAi"
+      }
+    },
+    "/v1/scan_results": {
+      "post": {
+        "description": "post api/v1/scan_results/",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "customer_echart_id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "image_id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "post api/v1/scan_results/"
+          }
+        },
+        "tags": [
+          "scan_results"
+        ],
+        "operationId": "postV1ScanResults"
+      }
+    },
+    "/v1/attachments/{id}": {
+      "delete": {
+        "description": "delete api/v1/attachments/:id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "delete api/v1/attachments/:id"
+          }
+        },
+        "tags": [
+          "attachments"
+        ],
+        "operationId": "deleteV1AttachmentsId"
+      }
+    },
+    "/v1/salon_proposals": {
+      "get": {
+        "description": "get api/v1/salon_proposals/",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "gender",
+            "type": "string",
+            "default": "female",
+            "enum": [
+              "female",
+              "male"
+            ],
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "get api/v1/salon_proposals/"
+          }
+        },
+        "tags": [
+          "salon_proposals"
+        ],
+        "operationId": "getV1SalonProposals"
+      }
+    },
+    "/v1/salon_proposals/{id}": {
+      "get": {
+        "description": "get api/v1/salon_proposals/:id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "get api/v1/salon_proposals/:id"
+          }
+        },
+        "tags": [
+          "salon_proposals"
+        ],
+        "operationId": "getV1SalonProposalsId"
+      }
+    },
+    "/v1/face_proposal_types": {
+      "get": {
+        "description": "get api/v1/face_proposal_types/",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "gender",
+            "type": "string",
+            "default": "female",
+            "enum": [
+              "female",
+              "male"
+            ],
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "get api/v1/face_proposal_types/"
+          }
+        },
+        "tags": [
+          "face_proposal_types"
+        ],
+        "operationId": "getV1FaceProposalTypes"
+      }
+    },
+    "/v1/face_proposal_types/{id}": {
+      "get": {
+        "description": "get api/v1/face_proposal_types/:id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "get api/v1/face_proposal_types/:id"
+          }
+        },
+        "tags": [
+          "face_proposal_types"
+        ],
+        "operationId": "getV1FaceProposalTypesId"
+      }
+    },
+    "/v1/images": {
+      "get": {
+        "description": "get api/v1/images/?url",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "get api/v1/images/?url"
+          }
+        },
+        "tags": [
+          "images"
+        ],
+        "operationId": "getV1Images"
+      }
+    },
+    "/v1/login": {
+      "post": {
+        "description": "POST api/v1/login",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "postV1Login",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/postV1Login"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "POST api/v1/login"
+          }
+        },
+        "tags": [
+          "login"
+        ],
+        "operationId": "postV1Login"
+      }
+    },
+    "/v1/reset_password": {
+      "post": {
+        "description": "POST api/v1/forgot_password",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "postV1ResetPassword",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/postV1ResetPassword"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "POST api/v1/forgot_password"
+          }
+        },
+        "tags": [
+          "reset_password"
+        ],
+        "operationId": "postV1ResetPassword"
+      }
+    },
+    "/v1/update_password": {
+      "put": {
+        "description": "put api/v1/update_password",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "putV1UpdatePassword",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/putV1UpdatePassword"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "put api/v1/update_password"
+          }
+        },
+        "tags": [
+          "update_password"
+        ],
+        "operationId": "putV1UpdatePassword"
+      }
+    },
+    "/v1/logout": {
+      "delete": {
+        "description": "DELETE api/v1/logout",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "DELETE api/v1/logout"
+          }
+        },
+        "tags": [
+          "logout"
+        ],
+        "operationId": "deleteV1Logout"
+      }
+    }
+  },
+  "definitions": {
+    "postV1Login": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "is_remember_token": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ],
+      "description": "POST api/v1/login"
+    },
+    "postV1ResetPassword": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email"
+      ],
+      "description": "POST api/v1/forgot_password"
+    },
+    "putV1UpdatePassword": {
+      "type": "object",
+      "properties": {
+        "password": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "password",
+        "token"
+      ],
+      "description": "put api/v1/update_password"
+    }
+  }
+}
