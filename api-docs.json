@@ -12,7 +12,7 @@
   ],
   "host": "localhost:3000",
   "basePath": "/api/",
-  "schemes": "http",
+  "schemes": ["http"],
   "tags": [
     {
       "name": "inquiries",
