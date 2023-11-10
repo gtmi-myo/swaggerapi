@@ -11,8 +11,10 @@
     "text/plain"
   ],
   "host": "localhost:3000",
-  "basePath": "/api/",
-  "schemes": ["http"],
+  "basePath": "/api",
+  "schemes": [
+    "http", "https"
+  ],
   "tags": [
     {
       "name": "inquiries",
